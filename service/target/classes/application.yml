@@ -1,0 +1,47 @@
+server:
+  port: 6000
+spring:
+  application:
+    name: service
+  basic:
+    enabled: false
+  #数据源
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  # Redis基础配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    connect-timeout: 30000
+  # RabbitMQ基础配置
+  rabbitmq:
+    host: 192.168.137.7
+    port: 5672
+    username: root
+    password: root
+    connection-timeout: 30000
+    listener:
+      simple:
+        concurrency: 5
+      max-concurrency: 15
+    virtual-host: /test
+  #activiti基础配置
+  activiti:
+    database-schema-update: false
+    #保存历史数据级别设置为full最高级别，便于历史数据的追溯
+    history-level: none
+    #关闭activiti自动部署（使用流程设计器部署，不使用具体文件访问方式）
+    check-process-definitions: false
+
+# mybatis-plus基础配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# knife4j基础配置
+knife4j:
+  basic:
+    enable: false
