@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = {"com.chiliuliu.service"}, exclude = {SecurityAutoConfiguration.class})
-@MapperScan(basePackages = "com.chiliuliu.service.dao")
+@MapperScan(basePackages = "com.chiliuliu.service.mapper")
 @EnableRabbit
 public class ServiceApplication {
 

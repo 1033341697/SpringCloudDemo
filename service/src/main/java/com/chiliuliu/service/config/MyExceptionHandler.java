@@ -1,8 +1,8 @@
 package com.chiliuliu.service.config;
 
 import com.baomidou.mybatisplus.extension.api.R;
-import com.chiliuliu.service.common.MyException;
-import com.chiliuliu.service.common.ResultCodeEnum;
+import com.chiliuliu.common.entity.ResultCodeEnum;
+import com.chiliuliu.common.exception.MyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
