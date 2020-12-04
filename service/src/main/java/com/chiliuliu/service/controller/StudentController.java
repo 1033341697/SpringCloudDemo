@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.chiliuliu.common.entity.ResultCodeEnum;
 import com.chiliuliu.common.entity.req.Student;
+import com.chiliuliu.common.exception.MyException;
 import com.chiliuliu.service.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,12 +33,19 @@ public class StudentController extends ApiController {
     /**
      * 分页查询所有数据
      *
-     * @param page    分页对象
      * @param student 查询实体
      * @return 所有数据
      */
-    @GetMapping
+    @GetMapping()
     public R selectAll(Page<Student> page, Student student) {
+        if (student.getId().equals("1")) {
+            try {
+                Thread.sleep(100040L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                throw new MyException(ResultCodeEnum.ERROR);
+            }
+        }
         return success(this.studentService.page(page, new QueryWrapper<>(student)));
     }
 
@@ -57,7 +66,7 @@ public class StudentController extends ApiController {
      * @param student 实体对象
      * @return 新增结果
      */
-    @PostMapping
+    @PostMapping("insert")
     public R insert(@RequestBody Student student) {
         return success(this.studentService.save(student));
     }
@@ -82,5 +91,10 @@ public class StudentController extends ApiController {
     @DeleteMapping
     public R delete(@RequestParam("idList") List<Long> idList) {
         return success(this.studentService.removeByIds(idList));
+    }
+
+    @GetMapping("testFeign")
+    public String testFeign() {
+        return "我是service服务返回的数据";
     }
 }

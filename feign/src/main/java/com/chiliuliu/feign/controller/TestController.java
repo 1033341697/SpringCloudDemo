@@ -1,12 +1,13 @@
 package com.chiliuliu.feign.controller;
 
+
+import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.chiliuliu.common.entity.ResultCodeEnum;
 import com.chiliuliu.common.entity.req.Student;
 import com.chiliuliu.feign.service.TestService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -16,12 +17,20 @@ import javax.annotation.Resource;
  **/
 @RestController
 @RequestMapping("feign")
-public class TestController {
+public class TestController extends ApiController {
     @Resource
     private TestService testService;
 
-    @GetMapping("getStudentService")
-    public R getStudentService(Page<Student> page, Student student) {
-        return testService.selectAll(page, student);
+    @GetMapping("testFeign")
+    public R test() {
+        String s = testService.testFeign();
+        return success(s);
     }
+
+    @GetMapping
+    public R selectAll(Page<Student> page, Student student) {
+        System.out.println("ssssssss");
+        return this.testService.selectAll(page,student);
+    }
+
 }

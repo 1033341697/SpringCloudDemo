@@ -3,6 +3,7 @@ package com.chiliuliu.service.config;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.chiliuliu.common.entity.ResultCodeEnum;
 import com.chiliuliu.common.exception.MyException;
+import com.chiliuliu.service.common.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -27,7 +28,7 @@ public class MyExceptionHandler {
     @ExceptionHandler(MyException.class)
     public R HandlerMyException(MyException e) {
         logger.info("HandlerMyException：（MyException）异常处理。");
-        return R.failed(ResultCodeEnum.getResultCodeEnum(e.getCode(), e.getMessage()));
+        return Result.error(e.getCode(), e.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -42,12 +43,13 @@ public class MyExceptionHandler {
                 message = fieldError.getDefaultMessage();
             }
         }
-        return R.failed(ResultCodeEnum.getResultCodeEnum(422L, message));
+        return Result.error(422L, message);
     }
 
     @ExceptionHandler(Exception.class)
     public R HandlerMyException(Exception e) {
-        logger.info("HandlerMyException：（MyException）异常处理。");
-        return R.failed(ResultCodeEnum.getResultCodeEnum(500L, e.getMessage()));
+        e.printStackTrace();
+        logger.info("HandlerMyException：（Exception）异常处理。");
+        return Result.error(500L, e.getMessage());
     }
 }

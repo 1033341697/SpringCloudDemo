@@ -59,4 +59,5 @@ public class Student extends Model<Student> {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
 }

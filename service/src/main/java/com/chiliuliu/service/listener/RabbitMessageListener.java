@@ -21,8 +21,8 @@ import java.util.Map;
  * @Author: liuyu
  * @Date: 2020/11/27 11:52
  **/
-@Component
-@RabbitListener(queues = "q_test_01")
+//@Component
+//@RabbitListener(queues = "q_test_01")
 public class RabbitMessageListener {
     private static final Logger logger = LoggerFactory.getLogger(RabbitMessageListener.class);
 
