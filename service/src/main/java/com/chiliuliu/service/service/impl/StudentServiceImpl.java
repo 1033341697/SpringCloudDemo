@@ -2,7 +2,7 @@ package com.chiliuliu.service.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.chiliuliu.service.entity.req.Student;
+import com.chiliuliu.common.entity.req.Student;
 import com.chiliuliu.service.mapper.StudentMapper;
 import com.chiliuliu.service.service.StudentService;
 import org.springframework.stereotype.Service;

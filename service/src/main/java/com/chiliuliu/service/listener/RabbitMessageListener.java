@@ -1,6 +1,6 @@
 package com.chiliuliu.service.listener;
 
-import com.chiliuliu.service.entity.req.Student;
+import com.chiliuliu.common.entity.req.Student;
 import com.chiliuliu.service.service.WebSocketServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

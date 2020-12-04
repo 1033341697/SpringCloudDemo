@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.chiliuliu.service.entity.req.Student;
+import com.chiliuliu.common.entity.req.Student;
 import com.chiliuliu.service.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 

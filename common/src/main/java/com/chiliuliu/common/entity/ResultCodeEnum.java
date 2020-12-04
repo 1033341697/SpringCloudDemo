@@ -11,7 +11,9 @@ public enum ResultCodeEnum implements IErrorCode {
     ERROR_INSERT(5001L, "新增失败"),
     REDIS_INSERT_ERROR(5002L, "插入缓存失败"),
     MESSAGE_SEND_ERROR(5005L, "消息发送失败"),
-    ARGUMENT_NOT_VALID(422L, "参数验证失败");
+    ARGUMENT_NOT_VALID(422L, "参数验证失败"),
+
+    SERVICE_BUSY(5100L, "服务繁忙，请稍后重试");
 
 
     private Long code;

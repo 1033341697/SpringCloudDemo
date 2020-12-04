@@ -2,7 +2,7 @@ package com.chiliuliu.service.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.chiliuliu.service.entity.req.Student;
+import com.chiliuliu.common.entity.req.Student;
 
 /**
  * 学生表(Student)表服务接口
