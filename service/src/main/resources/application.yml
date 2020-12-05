@@ -17,17 +17,17 @@ spring:
     port: 6379
     connect-timeout: 30000
   # RabbitMQ基础配置
-  rabbitmq:
-    host: 192.168.137.7
-    port: 5672
-    username: root
-    password: root
-    connection-timeout: 30000
-    listener:
-      simple:
-        concurrency: 5
-      max-concurrency: 15
-    virtual-host: /test
+#  rabbitmq:
+#    host: 192.168.137.7
+#    port: 5672
+#    username: root
+#    password: root
+#    connection-timeout: 30000
+#    listener:
+#      simple:
+#        concurrency: 5
+#      max-concurrency: 15
+#    virtual-host: /test
   #activiti基础配置
   activiti:
     database-schema-update: true

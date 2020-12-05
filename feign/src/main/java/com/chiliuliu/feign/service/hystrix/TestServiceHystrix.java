@@ -6,7 +6,6 @@ import com.chiliuliu.common.entity.ResultCodeEnum;
 import com.chiliuliu.common.entity.req.Student;
 import com.chiliuliu.feign.service.TestService;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @Author: liuyu

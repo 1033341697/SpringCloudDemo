@@ -27,7 +27,7 @@ public class TestController extends ApiController {
         return success(s);
     }
 
-    @GetMapping
+    @PostMapping
     public R selectAll(Page<Student> page, Student student) {
         System.out.println("ssssssss");
         return this.testService.selectAll(page,student);

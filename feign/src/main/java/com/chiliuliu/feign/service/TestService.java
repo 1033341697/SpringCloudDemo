@@ -7,6 +7,7 @@ import com.chiliuliu.feign.service.hystrix.TestServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @Author: liuyu
@@ -18,6 +19,6 @@ public interface TestService {
     @GetMapping("student/testFeign")
     String testFeign();
 
-    @GetMapping("student")
-    R selectAll(@SpringQueryMap Page<Student> page, @SpringQueryMap Student student);
+    @PostMapping("student")
+    R selectAll(@SpringQueryMap Page<Student> page, Student student);
 }

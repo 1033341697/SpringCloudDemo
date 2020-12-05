@@ -16,10 +16,6 @@ eureka:
 feign:
   hystrix:
     enabled: true
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
 hystrix:
   command:
     default:  #default全局有效，service id指定应用有效

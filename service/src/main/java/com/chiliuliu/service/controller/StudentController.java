@@ -36,7 +36,7 @@ public class StudentController extends ApiController {
      * @param student 查询实体
      * @return 所有数据
      */
-    @GetMapping()
+    @PostMapping()
     public R selectAll(Page<Student> page, Student student) {
         if (student.getId().equals("1")) {
             try {
