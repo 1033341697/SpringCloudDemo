@@ -7,7 +7,9 @@ import com.chiliuliu.common.entity.dto.StudentDto;
 import com.chiliuliu.common.entity.po.Student;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DtoEntityUtil {
 
     static Mapper mapper = new DozerBeanMapper();
