@@ -3,7 +3,7 @@ package com.chiliuliu.feign.service.hystrix;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.chiliuliu.common.entity.ResultCodeEnum;
-import com.chiliuliu.common.entity.req.Student;
+import com.chiliuliu.common.entity.po.Student;
 import com.chiliuliu.feign.service.TestService;
 import org.springframework.stereotype.Component;
 

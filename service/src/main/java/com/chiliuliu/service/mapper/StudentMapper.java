@@ -1,7 +1,7 @@
 package com.chiliuliu.service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chiliuliu.common.entity.req.Student;
+import com.chiliuliu.common.entity.po.Student;
 
 /**
  * 学生表(Student)表数据库访问层

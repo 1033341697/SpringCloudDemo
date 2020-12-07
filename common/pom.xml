@@ -47,6 +47,12 @@
             <artifactId>spring-boot-starter-redis</artifactId>
             <version>1.4.1.RELEASE</version>
         </dependency>
+        <!-- 解决dto,do,vo转换问题 -->
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>5.5.1</version>
+        </dependency>
     </dependencies>
 
 </project>

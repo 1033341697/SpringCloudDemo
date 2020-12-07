@@ -1,14 +1,10 @@
-package com.chiliuliu.common.entity.req;
-
-import com.baomidou.mybatisplus.extension.activerecord.Model;
+package com.chiliuliu.common.entity.dto;
 
 /**
- * 学生表(Student)实体类
- *
- * @author liuyu
- * @since 2020-12-03 11:15:53
- */
-public class Student extends Model<Student> {
+ * @Author: liuyu
+ * @Date: 2020/12/5 11:33
+ **/
+public class StudentDto {
 
     /**
      * id

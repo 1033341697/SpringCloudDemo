@@ -1,12 +1,12 @@
 package com.chiliuliu.service.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.chiliuliu.common.entity.ResultCodeEnum;
-import com.chiliuliu.common.entity.req.Student;
+import com.chiliuliu.common.entity.dto.StudentDto;
+import com.chiliuliu.common.entity.po.Student;
 import com.chiliuliu.common.exception.MyException;
 import com.chiliuliu.service.service.StudentService;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +37,7 @@ public class StudentController extends ApiController {
      * @return 所有数据
      */
     @PostMapping()
-    public R selectAll(Page<Student> page, Student student) {
+    public R selectAll(IPage page, StudentDto student) {
         if (student.getId().equals("1")) {
             try {
                 Thread.sleep(100040L);
@@ -46,7 +46,7 @@ public class StudentController extends ApiController {
                 throw new MyException(ResultCodeEnum.ERROR);
             }
         }
-        return success(this.studentService.page(page, new QueryWrapper<>(student)));
+        return studentService.page(page, student);
     }
 
     /**

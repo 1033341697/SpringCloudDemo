@@ -2,7 +2,7 @@ package com.chiliuliu.feign.service;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.chiliuliu.common.entity.req.Student;
+import com.chiliuliu.common.entity.po.Student;
 import com.chiliuliu.feign.service.hystrix.TestServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
