@@ -15,4 +15,6 @@ import com.chiliuliu.common.entity.po.Student;
  */
 public interface StudentService extends IService<Student> {
     R page(IPage page, StudentDto studentDto);
+
+    R all(StudentDto studentDto);
 }

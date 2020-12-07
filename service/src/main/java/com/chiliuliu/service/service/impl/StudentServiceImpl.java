@@ -9,11 +9,13 @@ import com.chiliuliu.common.entity.dto.StudentDto;
 import com.chiliuliu.common.entity.po.Student;
 import com.chiliuliu.common.utils.DtoEntityUtil;
 import com.chiliuliu.service.mapper.StudentMapper;
+import com.chiliuliu.service.service.MessageService;
 import com.chiliuliu.service.service.StudentService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 学生表(Student)表服务实现类
@@ -29,11 +31,22 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
      */
     @Resource
     private StudentMapper studentMapper;
+    @Resource
+    private MessageService messageService;
 
     @Override
     public R page(IPage page, StudentDto studentDto) {
         Student student = DtoEntityUtil.trans(studentDto, Student.class);
         IPage page1 = studentMapper.selectPage(page, new QueryWrapper<>(student));
+        messageService.testMessage(student.getName());
         return R.ok(page1);
+    }
+
+    @Override
+    public R all(StudentDto studentDto) {
+        Student student = DtoEntityUtil.trans(studentDto, Student.class);
+        List<Student> students = studentMapper.selectList(new QueryWrapper<>(student));
+        R r = messageService.testMessage(student.getName());
+        return r;
     }
 }

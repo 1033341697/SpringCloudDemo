@@ -37,16 +37,8 @@ public class StudentController extends ApiController {
      * @return 所有数据
      */
     @PostMapping()
-    public R selectAll(IPage page, StudentDto student) {
-        if (student.getId().equals("1")) {
-            try {
-                Thread.sleep(100040L);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                throw new MyException(ResultCodeEnum.ERROR);
-            }
-        }
-        return studentService.page(page, student);
+    public R selectAll(StudentDto student) {
+        return studentService.all(student);
     }
 
     /**

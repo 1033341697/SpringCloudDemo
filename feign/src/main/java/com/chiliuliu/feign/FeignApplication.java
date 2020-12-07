@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(scanBasePackages = "com.chiliuliu.feign")
 @EnableEurekaClient
-@EnableFeignClients(basePackages = "com.chiliuliu.feign.service")
+@EnableFeignClients
 @EnableCircuitBreaker
 public class FeignApplication {
 
