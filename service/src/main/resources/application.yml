@@ -29,10 +29,13 @@ mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-# knife4j基础配置
+# swagger开启
+swagger:
+  enable: true
+# 是否停用Knife4j文档
 knife4j:
-  basic:
-    enable: false
+  production: false
+
 
 #springCloud配置
 eureka:

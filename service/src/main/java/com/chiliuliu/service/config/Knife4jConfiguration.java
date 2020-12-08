@@ -23,14 +23,14 @@ public class Knife4jConfiguration {
                         .title("哧溜溜项目接口文档")
                         .contact("哧溜溜")
                         .description("# 哧溜溜项目接口文档-RESTful APIs")
-                        .termsOfServiceUrl("http://localhost:8080/")
+                        .termsOfServiceUrl("http://localhost:6000/")
                         .version("1.0")
                         .build())
                 //分组名称
                 .groupName("2.X版本")
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.chiliuliu.service.controller"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
