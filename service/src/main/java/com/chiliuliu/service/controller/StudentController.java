@@ -1,13 +1,11 @@
 package com.chiliuliu.service.controller;
 
 
-import com.aliyun.oss.OSSClient;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.chiliuliu.common.entity.dto.StudentDto;
 import com.chiliuliu.common.entity.po.Student;
 import com.chiliuliu.service.service.StudentService;
-import com.chiliuliu.service.utils.OSSUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -29,8 +27,6 @@ public class StudentController extends ApiController {
     @Resource
     private StudentService studentService;
 
-    @Resource
-    private OSSUtils ossUtil;
 
     /**
      * 分页查询所有数据

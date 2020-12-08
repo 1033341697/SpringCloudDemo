@@ -1,27 +1,25 @@
 package com.chiliuliu.common.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.chiliuliu.common.entity.dto.StudentDto;
-import com.chiliuliu.common.entity.po.Student;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class DtoEntityUtil {
 
-    static Mapper mapper = new DozerBeanMapper();
+    private static Mapper mapper = new DozerBeanMapper();
 
-    public static <D, E> E trans(D t, Class<E> clazz) {
+    public <D, E> E trans(D t, Class<E> clazz) {
         if (t == null) {
             return null;
         }
         return mapper.map(t, clazz);
     }
 
-    public static <D, E> List<E> trans(D[] ts, Class<E> clazz) {
+    public <D, E> List<E> trans(D[] ts, Class<E> clazz) {
         List<E> es = new ArrayList<E>();
         if (ts == null) {
             return es;
@@ -36,7 +34,7 @@ public class DtoEntityUtil {
     }
 
 
-    public static <D, E> List<E> trans(List<D> ts, Class<E> clazz) {
+    public <D, E> List<E> trans(List<D> ts, Class<E> clazz) {
         List<E> es = new ArrayList<E>();
         if (ts == null) {
             return es;
@@ -48,15 +46,5 @@ public class DtoEntityUtil {
             }
         }
         return es;
-    }
-
-    public static void main(String[] args) {
-        StudentDto studentDto = new StudentDto();
-        studentDto.setId("123");
-        studentDto.setCode("123");
-        studentDto.setName("123");
-        studentDto.setUserId("123");
-        Student trans = DtoEntityUtil.trans(studentDto, Student.class);
-        System.out.println(trans);
     }
 }

@@ -58,8 +58,3 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 100000 #断路器超时时间，默认1000ms
-oss:
-  accessId: 111111
-  accessKey: 123123
-  bucket: 13123
-  endpoint: 123123

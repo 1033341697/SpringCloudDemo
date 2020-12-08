@@ -1,4 +1,4 @@
-package com.chiliuliu.service.utils;
+package com.chiliuliu.common.utils;
 
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.*;

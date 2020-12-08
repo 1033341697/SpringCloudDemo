@@ -1,4 +1,4 @@
-package com.chiliuliu.service.common;
+package com.chiliuliu.common.entity;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import com.chiliuliu.common.entity.ResultCodeEnum;
