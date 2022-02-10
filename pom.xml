@@ -25,11 +25,7 @@
     <modules>
         <module>common</module>
         <module>eureka</module>
-        <module>service</module>
-        <module>feign</module>
-        <module>config</module>
-        <module>author</module>
-        <module>message</module>
+        <module>user</module>
     </modules>
 
     <dependencyManagement>

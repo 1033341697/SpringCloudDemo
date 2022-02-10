@@ -33,7 +33,6 @@ public class DtoEntityUtil {
         return es;
     }
 
-
     public <D, E> List<E> trans(List<D> ts, Class<E> clazz) {
         List<E> es = new ArrayList<E>();
         if (ts == null) {
